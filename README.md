@@ -7,7 +7,6 @@
 ## Description
 A simple webpage where user can choose one or more individual toppings and size of pizza and see the final cost.
 
-### _An exercise for using constructor and prototype.When a user will click on any specific place,details will show up _
 
 ## Setup/Installation Requirements
 
