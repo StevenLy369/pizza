@@ -8,10 +8,10 @@ function Pizza(size, toppings) {
 
 Pizza.prototype.addPizza = function (pizza) {
     this.pizzas.push(pizza);
-    
+
 }
 
-Pizza.prototype.price = function() {
+Pizza.prototype.price = function () {
     var pizzaPrice = 10;
 
 
@@ -19,25 +19,25 @@ Pizza.prototype.price = function() {
         pizzaPrice += 5;
         console.log("xl")
     } else if (this.size === "large") {
-        pizzaPrice +=3
+        pizzaPrice += 3
         console.log("large");
-    } else if (this.size =="medium") {
+    } else if (this.size == "medium") {
         pizzaPrice += 2;
     }
-    
+
 
     if (this.toppings.length <= 3) {
         pizzaPrice += 3
-        
 
-    }else if (this.toppings.length > 3 ) {
+
+    } else if (this.toppings.length > 3) {
         pizzaPrice += 5
-       
-    } 
-   
 
-console.log(pizzaPrice);
-return pizzaPrice;
+    }
+
+
+    console.log(pizzaPrice);
+    return pizzaPrice;
 
 }
 
@@ -48,25 +48,28 @@ $(document).ready(function () {
 
     $("form").submit(function (event) {
         event.preventDefault();
+        $("#form-group").hide();
+        $("#dancing").show();
+        $("#pizzaTime").show();
         var inputSize = ($('input[name=size]:checked').val());
         var toppings = []
-        $("input:checkbox[name=toppings]:checked").each(function(){
+        $("input:checkbox[name=toppings]:checked").each(function () {
             var checkedToppings = $(this).val();
             toppings.push(checkedToppings);
-          });
-          
-          var newPizza = new Pizza(inputSize,toppings);
+        });
 
-          var pizzaPrice = (newPizza.price());
+        var newPizza = new Pizza(inputSize, toppings);
 
-          $("#result").text("Your Total is $" + pizzaPrice + " and has these toppings: " + toppings);
+        var pizzaPrice = (newPizza.price());
+
+        $("#result").text("Your Total is $" + pizzaPrice + " and has these toppings: " + toppings);
         //   console.log(toppings);
         //   console.log(size);
-          
-        
+
+
     })
 
-   
+
 
 })
 
