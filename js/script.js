@@ -63,12 +63,11 @@ $(document).ready(function () {
         var pizzaPrice = (newPizza.price());
 
         $("#result").text("Your Total is $" + pizzaPrice + " and has these toppings: " + toppings);
-        //   console.log(toppings);
-        //   console.log(size);
-
 
     })
-
+    $("#logo").click(function(event){
+        location.reload();
+    })
 
 
 })
