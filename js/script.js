@@ -1,6 +1,7 @@
 
-function Pizza(size) {
+function Pizza(size, toppings) {
     this.size = size
+    this.toppings = toppings
 }
 
 
@@ -25,21 +26,16 @@ Pizza.prototype.price = function() {
     }
     
 
-    // if (this.toppings.length < 3) {
-    //     toppingPrice += 3;
-    //     console.log(this.toppings.length);
+    if (this.toppings.length <= 3) {
+        pizzaPrice += 3
+        
 
-    // }else if (this.toppings.length > 3 ) {
-    //     toppingPrice += 5
-    //     console.log("bye");
-    // } 
-    // pizzaPrice +=sizePrice;
-    // pizzaPrice +=toppingPrice;
-    // console.log(pizzaPrice);
-    // console.log(sizePrice);
-    // console.log(toppingPrice);
-    // console.log(this.size);
-    // return pizzaPrice;
+    }else if (this.toppings.length > 3 ) {
+        pizzaPrice += 5
+       
+    } 
+   
+
 console.log(pizzaPrice);
 return pizzaPrice;
 
@@ -63,7 +59,7 @@ $(document).ready(function () {
 
           var pizzaPrice = (newPizza.price());
 
-          $("#result").text(pizzaPrice);
+          $("#result").text("Your Total is $" + pizzaPrice + " and has these toppings: " + toppings);
         //   console.log(toppings);
         //   console.log(size);
           
