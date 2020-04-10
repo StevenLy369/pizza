@@ -3,18 +3,11 @@ function Pizza(size, toppings) {
     this.size = size
     this.toppings = toppings
 }
-
-
-
 Pizza.prototype.addPizza = function (pizza) {
     this.pizzas.push(pizza);
-
 }
-
 Pizza.prototype.price = function () {
     var pizzaPrice = 10;
-
-
     if (this.size === "xtraLarge") {
         pizzaPrice += 5;
         console.log("xl")
@@ -24,8 +17,6 @@ Pizza.prototype.price = function () {
     } else if (this.size == "medium") {
         pizzaPrice += 2;
     }
-
-
     if (this.toppings.length <= 3) {
         pizzaPrice += 3
 
@@ -34,13 +25,9 @@ Pizza.prototype.price = function () {
         pizzaPrice += 5
 
     }
-
-
     console.log(pizzaPrice);
     return pizzaPrice;
-
 }
-
 
 
 $(document).ready(function () {
@@ -68,7 +55,6 @@ $(document).ready(function () {
     $("#logo").click(function(event){
         location.reload();
     })
-
 
 })
 
